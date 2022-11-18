@@ -8,8 +8,8 @@ app.use(cors());
 app.use(express.json())
 
 //mongo connecting string
-//const uri = "mongodb+srv://sajeeb:123456sajeeb@cluster0.wiibo.mongodb.net/?retryWrites=true&w=majority";
-const uri="mongodb+srv://purna:2470purna@cluster0.z2een.mongodb.net/?retryWrites=true&w=majority"
+const uri = "mongodb+srv://sajjeb:1234bulu@cluster0.hy6wzxh.mongodb.net/?retryWrites=true&w=majority";
+//const uri="mongodb+srv://purna:2470purna@cluster0.z2een.mongodb.net/?retryWrites=true&w=majority"
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 
@@ -117,8 +117,10 @@ async function run() {
     //get all admin
     app.get('/admin',async(req,res)=>{
         const cursor = userCollection.find({})
+        //console.log(usersCollection)
          const result = await cursor.toArray()
          res.send(result)
+         console.log(result)
      })
    
     console.log("database connected");
